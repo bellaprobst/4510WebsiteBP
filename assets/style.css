@@ -1,0 +1,197 @@
+:root{
+  /* Nature palette */
+  --bg: #f6f3ea;          /* warm sand */
+  --card: #ffffff;        /* clean white */
+  --text: #1f2a24;        /* deep forest */
+  --muted: #4a5a50;       /* moss */
+  --accent: #2f6f4e;      /* evergreen */
+  --accent2: #7a9b76;     /* sage */
+  --border: rgba(31,42,36,.14);
+  --shadow: 0 14px 30px rgba(31,42,36,.10);
+  --radius: 18px;
+  --max: 980px;
+  --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family:var(--sans);
+  background:
+    radial-gradient(900px 420px at 15% 0%, rgba(122,155,118,.25), transparent 60%),
+    radial-gradient(900px 420px at 85% 10%, rgba(47,111,78,.18), transparent 55%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.55;
+}
+
+a{ color: var(--accent); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(246,243,234,.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap: 12px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  letter-spacing: .2px;
+}
+
+.leaf{
+  width: 12px;
+  height: 12px;
+  border-radius: 4px 10px 4px 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  transform: rotate(15deg);
+  box-shadow: 0 8px 16px rgba(47,111,78,.25);
+}
+
+.navlinks{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 14px;
+  font-size: 14px;
+}
+
+.navlinks a{
+  color: var(--muted);
+  padding: 7px 10px;
+  border-radius: 999px;
+}
+.navlinks a:hover{
+  background: rgba(47,111,78,.08);
+  color: var(--text);
+  text-decoration:none;
+}
+.navlinks a.active{
+  background: rgba(47,111,78,.12);
+  color: var(--text);
+  border: 1px solid rgba(47,111,78,.18);
+}
+
+main{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 34px 18px 70px;
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+.hero{
+  display:grid;
+  grid-template-columns: 1.3fr .9fr;
+  gap: 18px;
+  align-items: stretch;
+}
+@media (max-width: 860px){
+  .hero{ grid-template-columns: 1fr; }
+}
+
+h1{ margin:0 0 8px; font-size: 34px; letter-spacing: -0.02em; }
+h2{ margin:0 0 10px; font-size: 20px; }
+p{ margin: 0 0 12px; color: var(--muted); }
+
+.kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.kicker .dot{
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(47,111,78,.12);
+}
+
+.btnrow{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(47,111,78,.20);
+  background: rgba(47,111,78,.10);
+  color: var(--text);
+  font-weight: 700;
+}
+.btn:hover{ text-decoration:none; filter: brightness(1.03); }
+.btn.secondary{
+  background: rgba(31,42,36,.04);
+  border-color: var(--border);
+}
+
+.grid2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 860px){
+  .grid2{ grid-template-columns: 1fr; }
+}
+
+.item{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(31,42,36,.02);
+}
+.item h3{ margin:0 0 6px; font-size: 16px; }
+.item p{ margin:0; font-size: 14px; }
+
+.profile{
+  display:flex;
+  gap: 14px;
+  align-items:center;
+}
+.profile img{
+  width: 92px;
+  height: 92px;
+  border-radius: 18px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+.profile .meta{
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.list{
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+footer{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 18px 30px;
+  color: rgba(31,42,36,.55);
+  font-size: 13px;
+}
